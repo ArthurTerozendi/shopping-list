@@ -1,4 +1,4 @@
-$light-gray: #f6f5f5;
+$light-gray: #f5f4f4;
 
 .main {
     height: 100vh;
@@ -16,4 +16,7 @@ $light-gray: #f6f5f5;
 .shadow-botton {
     -webkit-box-shadow: 0px 5px 10px 0px #000000;
     box-shadow: 0px 5px 10px 0px #00000040;
+}
+.main-container {
+    height: calc(100% - 50px);
 }
