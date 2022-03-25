@@ -1,0 +1,46 @@
+@import "../../../assets/variables";
+
+.main {
+    height: 100%;
+}
+.title {
+    text-align: center;
+    padding: 2em;
+    align-content: center;
+    justify-content: center;
+}
+.inline {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-container {
+    overflow: auto;
+    height: calc(100% - 110px);
+    .list-box {
+        height: 250px;
+        width: 225px;
+        background-color: $bg-light;
+        -webkit-box-shadow: 0px 5px 10px 0px #000000;
+        box-shadow: 0px 5px 10px 0px #00000040;
+        border-radius: 2.5%;
+        .title {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 1em;
+        }
+        .list {
+            padding: 5px;
+        }
+    }
+    .add-box {
+        height: 250px;
+        width: 225px;
+        background-color: $gray;
+        -webkit-box-shadow: 0px 5px 10px 0px #000000;
+        box-shadow: 0px 5px 10px 0px #00000040;
+        border-radius: 2.5%;
+    }
+}
