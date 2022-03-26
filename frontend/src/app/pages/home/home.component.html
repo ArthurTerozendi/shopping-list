@@ -3,14 +3,17 @@
         <h3> Suas Listas </h3>
     </div>
     <div class="inline container-fluid list-container">
-        <div class="list-box m-3" *ngFor="let item of aux" >
+        <app-list-box style="height: 250px;
+        width: 225px;" class="m-3" [title]="item.title" [items]="item.items" *ngFor="let item of aux">
+        </app-list-box>
+        <!-- <div class="list-box m-3" >
             <div class="title">
                 Teste
             </div>
             <div class="list">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consectetur similique fuga maxime libero temporibus dignissimos sed perspiciatis veniam ea repellendus.
             </div>
-        </div>
+        </div> -->
         <div class="add-box m-3"></div>
     </div>
 </div>
