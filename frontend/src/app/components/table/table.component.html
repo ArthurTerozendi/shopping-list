@@ -1,1 +1,12 @@
-<p>table works!</p>
+<div class="main">
+    <div class="head">
+        <div class="head-column" *ngFor="let column of tableInfo" >
+            {{ column }}
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-column" *ngFor="let column of tableInfo">
+            {{ column }}
+        </div>
+    </div>
+</div>
