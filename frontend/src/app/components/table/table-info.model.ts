@@ -1,10 +1,12 @@
 export interface TableInfo {
     head: HeadInfo[],
-    body: BodyInfo[]
+    bodyRow: BodyRow[]
 }
-
 export interface HeadInfo {
     name: string;
+}
+export interface BodyRow {
+    bodyInfo: BodyInfo[],
 }
 export interface BodyInfo {
     name: string;

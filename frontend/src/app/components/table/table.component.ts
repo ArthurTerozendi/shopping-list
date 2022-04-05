@@ -8,7 +8,7 @@ import { TableInfo } from './table-info.model';
 })
 export class TableComponent implements OnInit {
 
-  @Input() tableInfo: TableInfo[] = [{head: [], body: []}];
+  @Input() tableInfo: TableInfo = { head: [], bodyRow: [] };
 
   constructor() { }
 

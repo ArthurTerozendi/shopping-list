@@ -1,0 +1,41 @@
+@import "../../../assets/variables";
+.main {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-light;
+    -webkit-box-shadow: 0px 5px 10px 0px #000000;
+    box-shadow: 0px 5px 10px 0px #00000040;
+    border-radius: 10px;
+    height: calc(100%);
+}
+.title {
+    text-align: center;
+    padding: 2em;
+    align-content: center;
+    justify-content: center;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    .head-column {
+        width: 200px;
+        text-align: center;
+        border: 1px solid #00000025;
+        padding: 0.5em;
+    }
+}
+.body {
+    display: flex;
+    flex-direction: row;
+    .body-column {
+        width: 200px;
+        text-align: center;
+        border: 1px solid #00000025;
+        padding: 0.5em;
+    }
+}
+

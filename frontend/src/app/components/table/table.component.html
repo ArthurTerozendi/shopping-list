@@ -1,12 +1,12 @@
-<div class="main">
+<div class="main p-2 overflow-auto">
     <div class="head">
-        <div class="head-column" *ngFor="let column of tableInfo" >
-            {{ column }}
+        <div class="head-column" *ngFor="let headColumn of tableInfo.head" >
+            {{ headColumn.name }}
         </div>
     </div>
-    <div class="body">
-        <div class="body-column" *ngFor="let column of tableInfo">
-            {{ column }}
+    <div class="body" *ngFor="let bodyRow of tableInfo.bodyRow" >
+        <div class="body-column" *ngFor="let bodyColumn of bodyRow.bodyInfo">
+            {{ bodyColumn.name }}
         </div>
     </div>
 </div>
