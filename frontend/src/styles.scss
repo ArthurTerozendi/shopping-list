@@ -13,13 +13,14 @@
 * {
     scrollbar-width: auto;
     scrollbar-color: $light-purple $white;
+    -ms-overflow-style: auto;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 10px;
+    overflow: hidden;
 }
-
 *::-webkit-scrollbar-track {
     background: $transparent;
 }
