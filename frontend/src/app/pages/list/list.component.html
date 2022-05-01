@@ -3,6 +3,6 @@
         <h3> {{ title }} </h3>
     </div>
     <div class="container-fluid table-container">
-        <app-table [tableInfo]="tableInfo"></app-table>
+        <app-table [tableInfo]="tableInfo" (editEvent)="onEvent($event)"></app-table>
     </div>
 </div>

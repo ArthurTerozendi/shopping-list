@@ -144,4 +144,8 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onEvent(event: any) {
+    console.log(event);
+    
+  }
 }
