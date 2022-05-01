@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: $bg-light;
     -webkit-box-shadow: 0px 5px 10px 0px #000000;
@@ -21,21 +21,46 @@
 .head {
     display: flex;
     flex-direction: row;
+    background-color: #9252b9;
+    color: #ffffff;
+    border-radius: 0.5em 0.5em 0 0;
     .head-column {
-        width: 200px;
+        min-width: 255px;
         text-align: center;
-        border: 1px solid #00000025;
         padding: 0.5em;
     }
 }
 .body {
     display: flex;
     flex-direction: row;
+    background-color: #a866e946;
     .body-column {
-        width: 200px;
+        min-width: 255px;
         text-align: center;
-        border: 1px solid #00000025;
         padding: 0.5em;
     }
 }
+.body:nth-child(even) {
+    background-color: #ffffff;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+}
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #9252b9;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
