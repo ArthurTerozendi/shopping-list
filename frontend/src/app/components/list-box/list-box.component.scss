@@ -17,6 +17,12 @@
         padding: 0px 10px 0px 20px;
     }
 }
+.list-box:hover {
+    box-shadow: -1px 1px $purple, -2px 2px $purple, -3px 3px $purple, -4px 4px $purple, -5px 5px $purple, -6px 6px $purple;
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+    transition: 0.3s ease;
+}
 .add-box {
     height: 250px;
     width: 225px;
