@@ -8,7 +8,7 @@
         <div class="body-column" *ngFor="let bodyColumn of bodyRow.bodyInfo; index as j" (dblclick)="toggleCellEditing(i, j)">
             <span *ngIf="!edit[i][j]"> {{ bodyColumn.name }} </span>
             <div *ngIf="edit[i][j]">
-                <input type="text" [value]="bodyColumn.name" #value (keyup.enter)="onEditCell(i, j, value.value); emitEvent(i, j, value.value)" class="form-control">
+                <input type="text" [value]="bodyColumn.name" #value (keyup.enter)="onEditCell(i, j, value.value); emitEvent(i, j, value.value)">
             </div>
         </div>
     </div>
