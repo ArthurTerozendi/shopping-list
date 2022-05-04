@@ -1,8 +1,8 @@
 <div class="main p-3">
     <div class="inline title">
-        <h3> {{ title }} </h3>
+        <h3> {{ list.title }} </h3>
     </div>
     <div class="container-fluid table-container">
-        <app-table [tableInfo]="tableInfo" (editEvent)="onEvent($event)"></app-table>
+        <app-table [tableInfo]="list.items" (editEvent)="onEvent($event)"></app-table>
     </div>
 </div>

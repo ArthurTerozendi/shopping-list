@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { EventResponse, TableInfo } from './table-info.model';
+import { EventResponse, TableInfo } from '../../list.interface';
 
 @Component({
   selector: 'app-table',
@@ -8,14 +8,14 @@ import { EventResponse, TableInfo } from './table-info.model';
 })
 export class TableComponent implements OnInit {
 
-  @Input() tableInfo: TableInfo = { head: [], bodyRow: [] };
+  @Input() tableInfo: TableInfo = { head: [], body: [] };
   @Output() editCellEvent: EventEmitter<EventResponse> = new EventEmitter<EventResponse>()
 
   constructor() { }
   edit: boolean[][] = [[false]];
 
   ngOnInit(): void {
-    this.tableInfo.bodyRow.forEach(r => {
+    this.tableInfo.body.forEach(r => {
       let row: boolean[] = [];
       Object.values(r).forEach(c => row.push(false))
       this.edit.push(row);
@@ -28,7 +28,7 @@ export class TableComponent implements OnInit {
 
   onEditCell(row: number, column: number, value: string) {
     this.toggleCellEditing(row, column);
-    this.tableInfo.bodyRow[row].bodyInfo[column].name = value;
+    this.tableInfo.body[row].column[column].name = value;
   }
   emitEvent(row: number, column: number, value: string) {
     this.editCellEvent.emit({ row: row, column: column, value: value });

@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   createNewList() {
     let id: number = this.lists.length + 1;
-    this.databaseService.saveList({ title: "Nova lista", items: [], id: id });
+    this.databaseService.saveList({ title: "Nova lista", items: {head: [], body: []}, id: id });
     this.openList(id);
   }
 

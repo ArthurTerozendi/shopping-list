@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TableInfo } from 'src/app/components/table/table-info.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { List } from 'src/app/list.interface';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-list',
@@ -8,144 +10,19 @@ import { TableInfo } from 'src/app/components/table/table-info.model';
 })
 export class ListComponent implements OnInit {
 
-  title: string = "Sem título";
+  list: List = { title: "", items: {head: [], body: []} };
 
-  tableInfo: TableInfo = {
-    head: [
-      { name: "Nome 1" },
-      { name: "Nome 2" },
-      { name: "Nome 3" },
-      { name: "Nome 4" },
-      { name: "Nome 5" }
-    ],
-    bodyRow: [
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-      {
-        bodyInfo: [
-          { name: "Conteudo 1" },
-          { name: "Conteudo 2" },
-          { name: "Conteudo 3" },
-          { name: "Conteudo 4" },
-          { name: "Conteudo 5" }
-        ]
-      },
-    ]
-  };
-
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private databaseService: DatabaseService
+  ) { }
 
   ngOnInit(): void {
+    let id = this.activatedRoute.snapshot.params['id'];
+    this.list = this.databaseService.getListById(id);
   }
 
   onEvent(event: any) {
     console.log(event);
-    
   }
 }

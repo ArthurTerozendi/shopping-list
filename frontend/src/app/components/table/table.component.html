@@ -4,8 +4,8 @@
             {{ headColumn.name }}
         </div>
     </div>
-    <div class="body" *ngFor="let bodyRow of tableInfo.bodyRow; index as i">
-        <div class="body-column" *ngFor="let bodyColumn of bodyRow.bodyInfo; index as j"
+    <div class="body" *ngFor="let body of tableInfo.body; index as i">
+        <div class="body-column" *ngFor="let bodyColumn of body.column; index as j"
             (dblclick)="toggleCellEditing(i, j)">
             <span *ngIf="!edit[i][j]"> {{ bodyColumn.name }} </span>
             <div *ngIf="edit[i][j]">
