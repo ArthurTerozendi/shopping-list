@@ -3,16 +3,8 @@
         <h3> Suas Listas </h3>
     </div>
     <div class="inline container-fluid list-container">
-        <app-list-box class="m-3 list-box" [title]="item.title" [items]="item.items" (click)="openList(item.id)" *ngFor="let item of aux">
+        <app-list-box class="m-3 list-box" [title]="item.title" [items]="item.items" (click)="openList(item.id)" *ngFor="let item of lists">
         </app-list-box>
-        <!-- <div class="list-box m-3" >
-            <div class="title">
-                Teste
-            </div>
-            <div class="list">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consectetur similique fuga maxime libero temporibus dignissimos sed perspiciatis veniam ea repellendus.
-            </div>
-        </div> -->
-        <div class="add-box m-3"></div>
+        <div class="add-box m-3" (click)="createNewList()" ></div>
     </div>
 </div>

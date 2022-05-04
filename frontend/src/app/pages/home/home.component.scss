@@ -39,6 +39,14 @@
         -webkit-box-shadow: 0px 5px 10px 0px #000000;
         box-shadow: 0px 5px 10px 0px #00000040;
         border-radius: 2.5%;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid #000000;
+            box-shadow: -1px 1px #000000, -2px 2px #000000, -3px 3px #000000, -4px 4px #000000;
+            -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+            transition: 0.3s ease;
+        }
     }
     &:hover {
         overflow: auto;

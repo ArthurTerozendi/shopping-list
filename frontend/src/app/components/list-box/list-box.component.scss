@@ -5,7 +5,7 @@
     background-color: $white;
     -webkit-box-shadow: 0px 5px 10px 0px #000000;
     box-shadow: 0px 5px 10px 0px #00000040;
-    border-radius: 2.5%;
+    border-radius: 0.2rem;
     .title {
         display: flex;
         flex-wrap: wrap;
@@ -16,12 +16,13 @@
     .list {
         padding: 0px 10px 0px 20px;
     }
-}
-.list-box:hover {
-    box-shadow: -1px 1px $purple, -2px 2px $purple, -3px 3px $purple, -4px 4px $purple, -5px 5px $purple, -6px 6px $purple;
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-    transition: 0.3s ease;
+    &:hover {
+        box-shadow: -1px 1px $purple, -2px 2px $purple, -3px 3px $purple, -4px 4px $purple, -5px 5px $purple, -6px 6px $purple;
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+        transition: 0.3s ease;
+        border: 1px solid $purple;
+    }
 }
 .add-box {
     height: 250px;

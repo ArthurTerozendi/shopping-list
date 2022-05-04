@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { List } from 'src/app/list.interface';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +10,25 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  aux: any[] = [
-    { title: "Lista 1", items: ["Item 1", "Item 2"], id: 1 },
-    { title: "Lista 2", items: ["Item 1", "Item 2"], id: 2 },
-    { title: "Lista 3", items: ["Item 1", "Item 2"], id: 3 },
-    { title: "Lista 4", items: ["Item 1", "Item 2"], id: 4 },
-    { title: "Lista 5", items: ["Item 1", "Item 2"], id: 5 },
-    { title: "Lista 6", items: ["Item 1", "Item 2"], id: 6 }
-  ]
+  lists: List[] = [];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private databaseService: DatabaseService
   ) { }
 
   ngOnInit(): void {
+    this.lists = this.databaseService.getAllLists();
   }
 
-  openList(id: number) {
-    this.router.navigateByUrl(`${id}/list`)
+  openList(id?: number) {
+    if (id) this.router.navigateByUrl(`${id}/list`)
+  }
+
+  createNewList() {
+    let id: number = this.lists.length + 1;
+    this.databaseService.saveList({ title: "Nova lista", items: [], id: id });
+    this.openList(id);
   }
 
 }
